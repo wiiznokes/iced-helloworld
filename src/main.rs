@@ -3,10 +3,6 @@ use iced::{Application, executor, Command, widget::Text, Settings};
 fn main() {
     App::run(Settings::default()).unwrap()
 }
-
-
-
-
 struct App {
 
 }
@@ -15,7 +11,6 @@ struct App {
 enum AppMsg {
     
 }
-
 
 impl Application for App {
     type Executor = executor::Default;
