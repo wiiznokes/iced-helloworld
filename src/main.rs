@@ -1,7 +1,7 @@
-use iced::{Application, executor, Command, widget::Text};
+use iced::{Application, executor, Command, widget::Text, Settings};
 
 fn main() {
-    println!("Hello, world!");
+    App::run(Settings::default()).unwrap()
 }
 
 
