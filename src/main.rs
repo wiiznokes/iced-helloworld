@@ -1,16 +1,12 @@
-use iced::{Application, executor, Command, widget::Text, Settings};
+use iced::{executor, widget::Text, Application, Command, Settings};
 
 fn main() {
     App::run(Settings::default()).unwrap()
 }
-struct App {
+struct App {}
 
-}
-
-#[derive(Debug)]
-enum AppMsg {
-    
-}
+#[derive(Debug, Clone)]
+enum AppMsg {}
 
 impl Application for App {
     type Executor = executor::Default;
@@ -26,13 +22,11 @@ impl Application for App {
         String::from("App")
     }
 
-    fn update(&mut self, message: Self::Message) -> iced::Command<Self::Message> {
-       
+    fn update(&mut self, _message: Self::Message) -> iced::Command<Self::Message> {
         Command::none()
     }
 
     fn view(&self) -> iced::Element<'_, Self::Message, iced::Renderer<Self::Theme>> {
-        Text::new("hello")
-        .into()
+        Text::new("hello").into()
     }
 }
