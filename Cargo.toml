@@ -5,4 +5,14 @@ edition = "2021"
 
 
 [dependencies]
-iced = "0.10.0"
+iced = {version = "0.10.0", features = ["advanced"]}
+cosmic-text = {version = "0.9.0", features = ["syntect"]}
+lazy_static = "1.4"
+log = "0.4"
+fontdb = "0.13"
+env_logger = "0.10"
+rfd = "0.11"
+
+[features]
+default = []
+vi = ["cosmic-text/vi"]
