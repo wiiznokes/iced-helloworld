@@ -1,22 +1,23 @@
-use iced::{executor, widget::Text, Application, Command, Settings, window::{Icon, self}};
+use iced::{
+    executor,
+    widget::Text,
+    window,
+    Application, Command, Settings,
+};
 
 fn main() {
-
     // https://stackoverflow.com/questions/30291757/attaching-an-icon-resource-to-a-rust-application
     let bytes = include_bytes!("./../resource/app_icon/app_icon150.ico");
 
     // todo: export Imageformat from Iced
-    let icon = window::icon::from_file_data(bytes, None).unwrap();   
+    let icon = window::icon::from_file_data(bytes, None).unwrap();
 
     let settings = Settings {
-
-
-
-        window: iced::window::Settings { 
-             icon: Some(icon), 
-             .. iced::window::Settings::default()
-            },
-        .. Settings::default()
+        window: iced::window::Settings {
+            icon: Some(icon),
+            ..iced::window::Settings::default()
+        },
+        ..Settings::default()
     };
 
     App::run(settings).unwrap()

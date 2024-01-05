@@ -2,7 +2,7 @@ set windows-powershell := true
 
 
 all:
-	clear ; cargo run
+	clear ; cargo run --release
 
 test:
 	cargo test --workspace --all-features
