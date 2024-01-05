@@ -1,7 +1,24 @@
-use iced::{executor, widget::Text, Application, Command, Settings};
+use iced::{executor, widget::Text, Application, Command, Settings, window::{Icon, self}};
 
 fn main() {
-    App::run(Settings::default()).unwrap()
+
+    let bytes = include_bytes!("./../resource/app_icon/app_icon150.ico");
+
+    let icon = window::icon::from_file_data(bytes, None).unwrap();   
+
+    let settings = Settings {
+
+
+        // let icon: Icon = window::icon::from_rgba(rgba, width, height)
+
+        window: iced::window::Settings { 
+             icon: Some(icon), 
+             .. iced::window::Settings::default()
+            },
+        .. Settings::default()
+    };
+
+    App::run(settings).unwrap()
 }
 struct App {}
 
