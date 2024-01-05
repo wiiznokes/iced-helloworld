@@ -6,3 +6,6 @@ edition = "2021"
 
 [dependencies]
 iced = { version = "0.10.0", features = ["image"]}
+
+[build-dependencies]
+winres = "0.1"

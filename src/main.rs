@@ -2,14 +2,15 @@ use iced::{executor, widget::Text, Application, Command, Settings, window::{Icon
 
 fn main() {
 
+    // https://stackoverflow.com/questions/30291757/attaching-an-icon-resource-to-a-rust-application
     let bytes = include_bytes!("./../resource/app_icon/app_icon150.ico");
 
+    // todo: export Imageformat from Iced
     let icon = window::icon::from_file_data(bytes, None).unwrap();   
 
     let settings = Settings {
 
 
-        // let icon: Icon = window::icon::from_rgba(rgba, width, height)
 
         window: iced::window::Settings { 
              icon: Some(icon), 
