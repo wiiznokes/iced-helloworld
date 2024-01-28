@@ -1,7 +1,19 @@
 use iced::{executor, widget::Text, Application, Command, Settings};
 
 fn main() {
-    App::run(Settings::default()).unwrap()
+
+    let bytes = include_bytes!("./../app_icon150.ico");
+
+    // todo: export Imageformat from Iced
+    let icon = iced::window::icon::from_file_data(bytes, None).unwrap();
+
+
+
+    let mut settings = Settings::default();
+
+    settings.window.icon = Some(icon);
+
+    App::run(settings).unwrap()
 }
 struct App {}
 
