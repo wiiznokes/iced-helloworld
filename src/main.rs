@@ -26,7 +26,9 @@ impl Application for App {
         Command::none()
     }
 
-    fn view(&self) -> iced::Element<'_, Self::Message, iced::Renderer<Self::Theme>> {
+    fn view(&self) -> iced::Element<Self::Message, Self::Theme, iced::Renderer> {
         Text::new("hello").into()
     }
+
+    
 }
