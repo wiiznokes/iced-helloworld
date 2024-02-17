@@ -5,6 +5,7 @@ edition = "2021"
 
 
 [dependencies.iced]
-git = "https://github.com/iced-rs/iced.git"
-branch = "master"
-features = ["image"]
+version = "0.12"
+#git = "https://github.com/iced-rs/iced.git"
+#branch = "master"
+features = []

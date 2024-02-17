@@ -1,17 +1,7 @@
-use iced::{executor, widget::Text, Application, Command, Settings};
+use iced::{executor, widget::Text, Application, Command, Element, Settings};
 
 fn main() {
-
-    let bytes = include_bytes!("./../app_icon150.ico");
-
-    // todo: export Imageformat from Iced
-    let icon = iced::window::icon::from_file_data(bytes, None).unwrap();
-
-
-
-    let mut settings = Settings::default();
-
-    settings.window.icon = Some(icon);
+    let settings = Settings::default();
 
     App::run(settings).unwrap()
 }
@@ -26,7 +16,7 @@ impl Application for App {
     type Theme = iced::Theme;
     type Flags = ();
 
-    fn new(_flags: Self::Flags) -> (Self, iced::Command<Self::Message>) {
+    fn new(_flags: Self::Flags) -> (Self, Command<Self::Message>) {
         (App {}, Command::none())
     }
 
@@ -34,13 +24,11 @@ impl Application for App {
         String::from("App")
     }
 
-    fn update(&mut self, _message: Self::Message) -> iced::Command<Self::Message> {
+    fn update(&mut self, _message: Self::Message) -> Command<Self::Message> {
         Command::none()
     }
 
-    fn view(&self) -> iced::Element<Self::Message, Self::Theme, iced::Renderer> {
+    fn view(&self) -> Element<Self::Message> {
         Text::new("hello").into()
     }
-
-    
 }
