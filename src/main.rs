@@ -1,7 +1,9 @@
-use iced::{executor, widget::Text, Application, Command, Settings};
+use iced::{executor, widget::Text, Application, Command, Element, Settings};
 
 fn main() {
-    App::run(Settings::default()).unwrap()
+    let settings = Settings::default();
+
+    App::run(settings).unwrap()
 }
 struct App {}
 
@@ -14,7 +16,7 @@ impl Application for App {
     type Theme = iced::Theme;
     type Flags = ();
 
-    fn new(_flags: Self::Flags) -> (Self, iced::Command<Self::Message>) {
+    fn new(_flags: Self::Flags) -> (Self, Command<Self::Message>) {
         (App {}, Command::none())
     }
 
@@ -22,11 +24,11 @@ impl Application for App {
         String::from("App")
     }
 
-    fn update(&mut self, _message: Self::Message) -> iced::Command<Self::Message> {
+    fn update(&mut self, _message: Self::Message) -> Command<Self::Message> {
         Command::none()
     }
 
-    fn view(&self) -> iced::Element<'_, Self::Message, iced::Renderer<Self::Theme>> {
+    fn view(&self) -> Element<Self::Message> {
         Text::new("hello").into()
     }
 }
